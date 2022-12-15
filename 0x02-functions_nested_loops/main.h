@@ -1,4 +1,7 @@
-#include "_putchar.c"
+#ifndef main_h
+#define main_h
 
-/* Function Prototype */
+/* Functions Prototype */
 int _putchar(char c);
+
+#endif
