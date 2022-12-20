@@ -8,14 +8,9 @@
  */
 void print_rev(char *s)
 {
-	int index = -1;
-	int i = 0;
-
-	/* Get the last index of s */
-	for (; *(s + i) != '\0'; i++)
-		index++;
+	int i = _strlen(s) - 1;
 	/* Reverse print s */
-	for (; index >= 0; index--)
-		_putchar(*(s + index));
+	for (; i >= 0; i--)
+		_putchar(*(s + i));
 	_putchar('\n');
 }
