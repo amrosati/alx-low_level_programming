@@ -10,12 +10,18 @@
  */
 void print_array(int *a, int n)
 {
-	if (n < 1 || n > (sizeof(a) / 4))
+	if (n < 1)
 		return;
 
 	int i = 0;
 
-	for (; i < (n - 1); i++)
+	for (; i < n; i++)
+	{
+		if (i == n - 1)
+		{
+			printf("%d\n", *(a + i));
+			break;
+		}
 		printf("%d, ", *(a + i));
-	printf("%d\n", *(a + i));
+	}
 }
