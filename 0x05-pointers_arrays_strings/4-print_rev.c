@@ -8,8 +8,11 @@
  */
 void print_rev(char *s)
 {
-	int i = _strlen(s) - 1;
-	/* Reverse print s */
+	int i = 0;
+	int j = -1;
+
+	for (; *(s + j) != '\0'; j++)
+		i++;
 	for (; i >= 0; i--)
 		_putchar(*(s + i));
 	_putchar('\n');
