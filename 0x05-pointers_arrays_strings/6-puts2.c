@@ -12,12 +12,7 @@ void puts2(char *str)
 	int i = 0;
 
 	for (; i < l; i += 2)
-	{
-		if (*(str + i) == NULL)
-			break;
-
 		_putchar(*(str + i));
-	}
 	_putchar('\n');
 }
 
