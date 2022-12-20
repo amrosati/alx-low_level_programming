@@ -10,6 +10,9 @@
  */
 void print_array(int *a, int n)
 {
+	if (n < 1 || n > (sizeof(a) / 4))
+		return;
+
 	int i = 0;
 
 	for (; i < (n - 1); i++)
