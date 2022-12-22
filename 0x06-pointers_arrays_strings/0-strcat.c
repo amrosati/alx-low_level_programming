@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * _strcat - Concatenates two strings
@@ -14,8 +13,8 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int dstlen = strlen(dest);
-	int srclen = strlen(src);
+	int dstlen = _strlen(dest);
+	int srclen = _strlen(src);
 	int n = dstlen + srclen;
 	int i;
 
@@ -24,4 +23,20 @@ char *_strcat(char *dest, char *src)
 		*(dest + dstlen++) = *(src + i);
 
 	return (dest);
+}
+
+/**
+ * strlen - Calculate length of string excludeing terminating null byte
+ * @str: string to compute
+ *
+ * Return: length of string
+ */
+int _strlen(char *str)
+{
+	int i, l;
+
+	for (i = 0, l = 0; *(str + i) != '\0'; i++)
+		l++;
+
+	return (l);
 }
