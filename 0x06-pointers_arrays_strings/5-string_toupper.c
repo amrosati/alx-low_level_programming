@@ -6,16 +6,13 @@
  *
  * Return: String in uppercase
  */
-char *string_toupper(char *src)
+char *string_toupper(char *str)
 {
-	char *str = src;
-	int i = 0;
+	int i = -1;
 
-	for (; str[i] != '\0'; i++)
-	{
+	while (str[++i])
 		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= (char) 32;
-	}
-	
+			str[i] -= 32;
+
 	return (str);
 }
