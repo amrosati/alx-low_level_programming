@@ -2,9 +2,9 @@
 #define MAIN_H
 
 /* Functions Prototypes */
-int _putchar(char c);
-char *_memset(char *s, char b, unsigned int n);
-char *_memcpy(char *dest, char *src, unsigned int n);
-char *_strchr(char *s, char c);
+int _putchar(char);
+char *_memset(char *, char, unsigned int);
+char *_memcpy(char *, char *, unsigned int);
+char *_strchr(char *, char);
 
 #endif /* MAIN_H */
