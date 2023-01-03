@@ -23,7 +23,7 @@ char *_strstr(char *haystack, char *needle)
 		for (; *s != '\0' && *ss != '\0'; s++, ss++)
 			if (*s != *ss)
 				break;
-		
+
 		if (*ss == '\0')
 			return (haystack);
 	}
