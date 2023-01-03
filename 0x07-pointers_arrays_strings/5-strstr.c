@@ -15,10 +15,18 @@ char *_strstr(char *haystack, char *needle)
 {
 	char *s, *ss;
 
-	for (; *haystack; haystack++)
-		for (s = haystack, ss = needle; *s && *ss && (*s == *ss); s++, ss++)
-			if (!*(ss + 1))
-				return (haystack);
+	for (; *haystack != '\0'; haystack++)
+	{
+		s = haystack;
+		ss = needle;
+
+		for (; *s != '\0' && *ss != '\0'; s++, ss++)
+			if (*s != *ss)
+				break;
+		
+		if (*ss == '\0')
+			return (haystack);
+	}
 
 	return (0);
 }
