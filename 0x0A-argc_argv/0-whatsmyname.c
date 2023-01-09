@@ -2,6 +2,8 @@
 
 /**
  * main - prints the program name
+ * @argc: number of program args
+ * @argv: array of the args
  *
  * Return: 0 (on success)
  */
@@ -11,6 +13,6 @@ int main(int argc, char *argv[])
 		return (1);
 
 	printf("%s\n", argv[0]);
-	
+
 	return (0);
 }
