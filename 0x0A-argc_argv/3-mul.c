@@ -1,6 +1,5 @@
 #include <stdio.h>
-
-int _atoi(char *);
+#include <stdlib.h>
 
 /**
  * main - multiplies two given numbers
@@ -20,38 +19,11 @@ int main(int argc, char *argv[])
 	}
 
 
-	x = _atoi(argv[1]);
-	y = _atoi(argv[2]);
+	x = atoi(argv[1]);
+	y = atoi(argv[2]);
 	res = x * y;
 
 	printf("%d\n", res);
 
 	return (0);
-}
-
-/**
- * _atoi - Converts number string to integers
- * @s: String pointer to be converted
- *
- * Return: Integer value of the number string
- */
-int _atoi(char *s)
-{
-	int sign = 1;
-	unsigned int num = 0;
-	char *tmp = s;
-
-	while (*tmp != '\0' && (*tmp < '0' || *tmp > '9'))
-	{
-		if (*tmp == '-')
-			sign *= -1;
-		tmp++;
-	}
-	if (*tmp != '\0')
-		do {
-			num = num * 10 + (*tmp - '0');
-			tmp++;
-		} while (*tmp >= '0' && *tmp <= '9');
-
-	return (num * sign);
 }
