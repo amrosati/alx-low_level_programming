@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 3 || argc > 3)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		return (1);
 	}
 
@@ -53,5 +53,4 @@ int _atoi(char *s)
 			tmp++;
 		} while (*tmp >= '0' && *tmp <= '9');
 
-	return (num * sign);
-}
+	return (num * sign);}
