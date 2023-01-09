@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int res;
+	int x, y, res;
 
 	if (argc < 3 || argc > 3)
 	{
@@ -18,8 +18,10 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	res = atoi(argv[1]);
-	res *= atoi(argv[2]);
+
+	x = atoi(argv[1]);
+	y = atoi(argv[2]);
+	res = x * y;
 
 	printf("%d\n", res);
 
