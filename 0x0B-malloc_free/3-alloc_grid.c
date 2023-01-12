@@ -24,7 +24,7 @@ int **alloc_grid(int width, int height)
 		*(ptrs_arr + i) = malloc(sizeof(int) * width);
 		if (*(ptrs_arr + i) == NULL)
 		{
-			free_mem(ptrs_arr, i);
+			free_grid(ptrs_arr, i);
 			return (NULL);
 		}
 
@@ -48,21 +48,4 @@ void _memset(int *ptr, int val, unsigned int n)
 
 	for (i = 0; i < n; i++)
 		*(ptr + i) = val;
-}
-
-/**
- * free_mem - frees block of memory
- * @ptr: memory to free
- * @n: size of memory
- *
- * Return: nothing
- */
-void free_mem(int **ptr, unsigned int n)
-{
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
-		free(*(ptr + i));
-
-	free(ptr);
 }
