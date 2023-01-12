@@ -63,6 +63,6 @@ void free_mem(int **ptr, unsigned int n)
 
 	for (i = 0; i < n; i++)
 		free(*(ptr + i));
-	
+
 	free(ptr);
 }
