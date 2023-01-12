@@ -13,5 +13,6 @@ int str_len(char *);
 int **alloc_grid(int, int);
 void _memset(int *, int, unsigned int);
 void free_grid(int **, int);
+void free_mem(int **, int);
 
 #endif /* MAIN_H */

@@ -49,3 +49,20 @@ void _memset(int *ptr, int val, unsigned int n)
 	for (i = 0; i < n; i++)
 		*(ptr + i) = val;
 }
+
+/**
+ * free_mem - frees block of memory
+ * @ptr: memory to free
+ * @n: size of memory
+ *
+ * Return: nothing
+ */
+void free_mem(int **ptr, int n)
+{
+	int i;
+
+	for (i = 0; i < n; i++)
+		free(*(ptr + i));
+
+	free(ptr);
+}
