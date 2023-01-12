@@ -10,5 +10,7 @@ char *create_array(unsigned int, char);
 char *_strdup(char *);
 char *str_concat(char *, char *);
 int str_len(char *);
+int **alloc_grid(int, int);
+void _memset(int *, int, unsigned int);
 
 #endif /* MAIN_H */
