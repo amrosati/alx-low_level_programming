@@ -2,7 +2,8 @@
 #define _DOG_H_
 
 /* Data Types */
-struct dog {
+struct dog
+{
 	char *name;
 	float age;
 	char *owner;
