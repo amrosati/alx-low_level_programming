@@ -1,4 +1,4 @@
-#include "main.h"
+#include "dog.h"
 
 /**
  * init_dog - initializes a struct dog type pointer with given values
@@ -9,7 +9,7 @@
  *
  * Return: nothing
  */
-void init_dog(struct dog *d, char *name, foat age, char *owner)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	d->name = name;
 	d->age = age;
