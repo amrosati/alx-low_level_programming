@@ -1,10 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
 #ifndef _DOG_H_
 #define _DOG_H_
 
-/* Data Types */
+/* Include */
+#include <stdio.h>
+#include <stdlib.h>
 
+/* Data Types */
 /**
  * struct dog - defines a new dog structure
  * @name: dog's name
