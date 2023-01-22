@@ -15,8 +15,7 @@ void print_all(const char * const format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-
-	while (*str && str)
+	while (str && *str)
 	{
 		print_sep(*str, c);
 
