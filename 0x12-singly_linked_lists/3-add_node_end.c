@@ -9,27 +9,49 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
+	list_t *cursor = NULL;
 	list_t *new_node = NULL;
-	list_t *cursor = *head;
 
-	/* Move the cursor to the end of list */
-	while (cursor && corsor->next)
-		cursor = cursor->next;
-
-	/* Initialize node and it's data */
-	new_node = malloc(sizeof(list_t));
-	if (!new_node)
+	new_node = add_node(&cursor, str);
+	if (new_node == NULL)
 		return (NULL);
 
+	if (head == NULL)
+		head = &cursor;
+	else
+	{
+		cursor = *head;
+		if (cursor != NULL)
+			while (cursor->next != NULL)
+				cursor = cursor->next;
+		cursor->next = new_node;
+	}
+
+	return (new_node);
+}
+
+/**
+ * add_node - adds a node at the beginning of a list_t list
+ * @head: ponter to a pointer to the head of a list
+ * @str: string to be duplicated as data to new node
+ *
+ * Return: address of new node (on success)
+ */
+list_t *add_node(list_t **head, const char *str)
+{
+	list_t *new_node;
+
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
+		return (NULL);
+
+	/* Initialize data */
 	new_node->str = strdup(str);
 	new_node->len = strlen(str);
-	new_node->next = NULL;
 
-	/* Insert at end of list */
-	if (cursor)
-		cursor = new_node;
-	else
-		cursor->next = new_node;
+	/* Insert into list */
+	new_node->next = *head;
+	*head = new_node;
 
 	return (new_node);
 }
