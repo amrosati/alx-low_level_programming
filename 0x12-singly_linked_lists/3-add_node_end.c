@@ -9,23 +9,24 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *cursor = NULL;
+	list_t *cursor = *head;
 	list_t *new_node = NULL;
 
 	new_node = add_node(&cursor, str);
 	if (new_node == NULL)
 		return (NULL);
 
-	if (head == NULL)
-		head = &cursor;
-	else
+	if (cursor == NULL)
 	{
-		cursor = *head;
-		if (cursor != NULL)
-			while (cursor->next != NULL)
-				cursor = cursor->next;
-		cursor->next = new_node;
+		cursor = new_node;
+
+		return (new_node);
 	}
+
+	while (cursor->next != NULL)
+		cursor = cursor->next;
+
+	cursor->next = new_node;
 
 	return (new_node);
 }
@@ -50,7 +51,7 @@ list_t *add_node(list_t **head, const char *str)
 	new_node->len = strlen(str);
 
 	/* Insert into list */
-	new_node->next = *head;
+	new_node->next = NULL;
 	*head = new_node;
 
 	return (new_node);
