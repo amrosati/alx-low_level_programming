@@ -29,8 +29,7 @@ size_t list_len(const list_t *);
 list_t *add_node(list_t **, const char *);
 list_t *add_node_end(list_t **, const char *);
 void free_list(list_t *);
-void __attribute__ ((constructor)) first();
+void __attribute__ ((constructor)) pre_main();
 
-#pragma startup first
 
 #endif /* _LISTS_H_ */
