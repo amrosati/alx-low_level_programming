@@ -10,37 +10,19 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num;
-	int idx, position, val;
+	unsigned int num = 0;
+	int i;
 
-	if (b == NULL)
+	if (!b)
 		return (0);
 
-	for (idx = 0; b[idx] != '\0'; idx++)
-		if (b[idx] < '0' || b[idx] > '1')
+	for (i = 0; b[i]; i++)
+	{
+		if (b[i] < '0' || b[i] > '1')
 			return (0);
 
-	idx--;
-	for (num = 0, position = 0; idx >= 0; idx--, position++)
-	{
-		val = b[idx] - '0';
-		val *= _pow(position);
-		num += (unsigned int) val;
+		num = 2 * num + (b[i] - '0');
 	}
 
-	return (val);
-}
-
-/**
- * _pow - returns 2 to the power of the givin number
- * @n: number
- *
- * Return: the result
- */
-int _pow(int n)
-{
-	if (n == 0)
-		return (1);
-
-	return (2 * _pow(n - 1));
+	return (num);
 }
