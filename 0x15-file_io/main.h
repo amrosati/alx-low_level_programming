@@ -10,6 +10,5 @@
 /* Functions Prototypes */
 int _putchar(char);
 ssize_t read_textfile(const char *, size_t);
-void handle_err(int *, char *);
 
 #endif /* _MAIN_H_ */
