@@ -60,30 +60,34 @@ int main(int ac, char **av)
  */
 int copy_data(char *filename1, int fd_from, char *filename2, int fd_to)
 {
-	int bytes;
+	int r, w; 
 	char *buf;
 
 	buf = malloc(BUFSIZ);
 	if (buf == NULL)
-		return (-1);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename2);
+		exit(99);
+	}
 
 	do {
-		bytes = read(fd_from, buf, BUFFSIZ);
-		if (bytes == -1)
+		r = read(fd_from, buf, BUFFSIZ);
+		if (fd_from == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename1);
 			exit(98);
 		}
-		else if (bytes == 0)
+		else if (r == 0)
 			break;
 
-		if ((write(fd_to, buf, bytes)) == -1)
+		w = write(fd_to, buf, r);
+		if (fd_to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename2);
 			exit(98);
 		}
 
-	} while (bytes != 0);
+	} while (r > 0);
 
 	free(buf);
 	return (1);
