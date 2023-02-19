@@ -74,6 +74,8 @@ int copy_data(char *filename1, int fd_from, char *filename2, int fd_to)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename1);
 			exit(98);
 		}
+		else if (bytes == 0)
+			break;
 
 		if ((write(fd_to, buf, bytes)) == -1)
 		{
