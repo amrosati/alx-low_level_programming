@@ -16,7 +16,7 @@ int _putchar(char);
 ssize_t read_textfile(const char *, size_t);
 int create_file(const char *, char *);
 int append_text_to_file(const char *, char *);
-int copy_data(char *, int, char *, int);
-int close_files(int, ...);
+char *create_buffer(char *);
+void close_file(int);
 
 #endif /* _MAIN_H_ */
