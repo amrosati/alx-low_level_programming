@@ -1,8 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* Libraries Uesed */
+/* Include */
 #include <stdlib.h>
+#include <string.h>
 
 /* Functions Prototypes */
 int _putchar(char);
@@ -14,5 +15,6 @@ int **alloc_grid(int, int);
 void _memset(int *, int, unsigned int);
 void free_grid(int **, int);
 void free_mem(int **, int);
+char *argstostr(int, char **);
 
 #endif /* MAIN_H */
