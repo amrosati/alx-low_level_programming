@@ -44,6 +44,9 @@ unsigned long int hash_djb2(const unsigned char *);
 unsigned long int key_index(const unsigned char *, unsigned long int);
 int hash_table_set(hash_table_t *, const char *, const char *);
 char *hash_table_get(const hash_table_t *, const char *);
+void hash_table_print(const hash_table_t *);
+void hash_table_delete(hash_table_t *);
+void free_list(hash_node_t *);
 
 
 #endif /* __HASH_TABLES_H__ */
