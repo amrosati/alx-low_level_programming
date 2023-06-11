@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <string.h>
-#include <stdarg.h>
+#include <elf.h>
 
 #define BUFFSIZ 1024
 /* Functions Prototypes */
