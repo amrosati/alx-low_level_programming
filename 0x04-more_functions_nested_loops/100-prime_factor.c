@@ -8,28 +8,22 @@
  */
 int main(void)
 {
-	long num = 612852475143;
-	int factor = 0;
-	long i, j;
+	long prime = 612852475143, divisor;
 
-	for (i = num - 1; i > 1; i--)
+	while (divisor < (prime / 2))
 	{
-		if (num % i == 0)
+		if ((prime % 2) == 0)
 		{
-			for (j = i - 1; j > 1; j--)
-			{
-				if (i % j == 0)
-				{
-					factor = j;
-					break;
-				}
-			}
+			prime /= 2;
+			continue;
 		}
-		if (factor > 0)
-			break;
+
+		for (divisor = 3; divisor < (prime / 2); divisor += 2)
+			if ((prime % divisor) == 0)
+				prime /= divisor;
 	}
 
-	printf("%ld\n", factor);
+	printf("%ld\n", prime);
 
 	return (0);
 }
