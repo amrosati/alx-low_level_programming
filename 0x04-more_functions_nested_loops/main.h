@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <limits.h>
+
 /* Functions Prototypes */
 int _putchar(char c);
 int _isupper(int c);
