@@ -1,6 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdio.h>
+#include <string.h>
+
 /* Functions Prototypes */
 int _putchar(char);
 void _puts_recursion(char *);
@@ -11,5 +14,7 @@ int _pow_recursion(int, int);
 int fun(int, int);
 int _sqrt_recursion(int);
 int is_prime_number(int);
+int is_palindrome(char *);
+int check_recur(char *, int, int);
 
 #endif /* MAIN_H */
