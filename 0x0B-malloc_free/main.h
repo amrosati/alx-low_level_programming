@@ -16,5 +16,8 @@ void _memset(int *, int, unsigned int);
 void free_grid(int **, int);
 void free_mem(int **, int);
 char *argstostr(int, char **);
+char **strtow(char *);
+size_t count_words(char *);
+void free_words(char **);
 
 #endif /* MAIN_H */
