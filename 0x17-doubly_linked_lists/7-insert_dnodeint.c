@@ -25,14 +25,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			return (NULL);
 		return (node);
 	}
-	else if (idx == size - 1)
+	else if (idx == size)
 	{
 		node = add_dnodeint_end(h, n);
 		if (!node)
 			return (NULL);
 		return (node);
 	}
-	else if (idx >= size)
+	else if (idx > size)
 		return (NULL);
 
 	for (cursor = *h; cursor->next && idx > 1; idx--)
